@@ -20,7 +20,7 @@ WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm ci --production
+RUN npm ci --production && npm install typescript
 
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
