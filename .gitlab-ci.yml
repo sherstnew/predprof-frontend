@@ -3,7 +3,7 @@ stages:
   - deploy
 
 variables:
-  DOCKER_IMAGE: "sherstnew/predprof-frontend:latest"
+  DOCKER_IMAGE: "$DOCKER_USERNAME/predprof-frontend:latest"
 
 build_image:
   stage: build
