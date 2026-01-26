@@ -2,10 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import { ThemeSwitcher } from "@/components/theme-switcher";
-import Image from "next/image";
-import logo from "@/public/logo.webp";
-import Link from "next/link";
+import Header from "@/components/header";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -31,7 +28,7 @@ export default function RootLayout({
     return (
         <html lang="en" suppressHydrationWarning>
             <body
-                className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen`}
+                className={`${geistSans.variable} ${geistMono.variable} antialiased h-screen flex flex-col`}
             >
                 <ThemeProvider
                     attribute="class"
@@ -39,13 +36,8 @@ export default function RootLayout({
                     enableSystem
                     disableTransitionOnChange
                 >
-                    <header className="w-full flex justify-between fixed px-5 py-3 items-center bg-background left-0 z-10">
-                        <Link href="/">
-                            <Image src={logo} alt="Logo" height={35} />
-                        </Link>
-                        <ThemeSwitcher />
-                    </header>
-                    <main className="p-5 pt-17">{children}</main>
+                    <Header />
+                    <main className="p-5 flex-1">{children}</main>
                 </ThemeProvider>
             </body>
         </html>
