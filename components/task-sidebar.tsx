@@ -11,7 +11,7 @@ import {
 
 export function TaskSidebar() {
     return (
-        <Sidebar className='mt-17 ml-3 h-[calc(100vh-5rem)]' variant='floating'>
+        <Sidebar variant='floating' className='h-full'>
             <SidebarContent>
                 <SidebarGroup>
                     <SidebarGroupLabel className='text-lg mb-2'>Задания</SidebarGroupLabel>

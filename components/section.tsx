@@ -1,5 +1,9 @@
-'use client'
-import { type Task as ITask } from "@/lib/types";
+"use client"
+import type { TaskSchema } from '@/lib/client';
+
+type ITask = TaskSchema & {
+    id?: string;
+};
 import {
     Pagination,
     PaginationContent,
